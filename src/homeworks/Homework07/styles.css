@@ -1,0 +1,6 @@
+.list-of-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: auto
+  }
