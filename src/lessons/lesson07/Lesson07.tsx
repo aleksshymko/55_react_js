@@ -11,7 +11,7 @@ function Lesson07 () {
 
 
     return (
-        <div className="cars-wrapper">
+        <div className="cards-wrapper">
             {animalCards}
         </div>
     )
