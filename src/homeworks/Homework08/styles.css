@@ -1,0 +1,12 @@
+.password-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 10px;
+}
+
+.password-wrap label {
+    display: block;
+}

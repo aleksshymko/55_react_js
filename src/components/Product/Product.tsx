@@ -1,13 +1,11 @@
 import { ProductProps } from "./types";
 import "./styles.css";
 
-function Product({ name, price }: ProductProps) {
+function Product({ productName, productPrice }: ProductProps) {
   return (
-    <div className="product-card">
-      <p>
-        Fruit: {name} <br />
-        Price: {price}
-      </p>
+    <div className="product-container">
+      <div> Product: {productName} </div>
+      <div> Price: {productPrice}</div>
     </div>
   );
 }
