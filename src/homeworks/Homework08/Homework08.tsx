@@ -11,7 +11,7 @@ function Homework08 () {
         setPassword(event.target.value)
     }
     const showPasswordHandler= () => {
-        setShowPassword(!showPassword)
+        setShowPassword(true)
     }
     const hidePassword = () => {
         setShowPassword(false)
