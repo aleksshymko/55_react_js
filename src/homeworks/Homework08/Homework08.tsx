@@ -5,7 +5,7 @@ import './styles.css'
 
 function Homework08 () {
     const [password, setPassword] = useState<string>('');
-    const [showPassword, setShowPassword] = useState<boolean>(false);
+    const [isShowPassword, setShowPassword] = useState<boolean>(false);
 
     const onChangePassword = (event: ChangeEvent<HTMLInputElement>) => {
         setPassword(event.target.value)
@@ -21,15 +21,16 @@ function Homework08 () {
         <div className="password-wrap">
             <h2>Change password</h2>
             <Input 
-            name="password_input" 
+            name="password" 
             label="Password"
+            id="password_id"
             placeholder="Enter your password" 
             type="password"
             onChange={onChangePassword}
             value={password}
             />
-            {showPassword &&
-            <div>
+            {isShowPassword &&
+            <div className="result-container">
                 Your password: {password}
             </div>}
             <Button name="SHOW PASSWORD" onClick={showPasswordHandler}/>
