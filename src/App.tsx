@@ -1,3 +1,6 @@
+import Homework10 from "./homeworks/Homework10/Homework10";
+import GlobalStyles from "./styles/GlobalStyles";
+
 //import Button from "./components/Button/Button";
 //import Homework06 from "./homeworks/Homework06/Homework06"
 //import Lesson07 from "./lessons/lesson07/Lesson07"
@@ -7,20 +10,20 @@
 //import Homework08 from './homeworks/Homework08/Homework08';
 //import Lesson08 from './lessons/Lesson08/Lesson08';
 //import Lesson09 from "./lessons/Lesson09/Lesson09"
-
-import Homework09 from "./homeworks/Homework09/Homework09"
+// import Homework09 from "./homeworks/Homework09/Homework09"
+// import Lesson10 from "./lessons/Lesson10/Lesson10";
 
 function App() {
-
   return (
     <>
+      <GlobalStyles />
       {/* <Task06 /> */}
-      <Homework09 />
+      <Homework10 />
       {/* <Button/> */}
-      {/* <Lesson09/> */}
+      {/* <Lesson10 /> */}
       {/* <Consultation04/> */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
