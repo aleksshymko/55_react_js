@@ -5,8 +5,16 @@
     justify-content: center;
     flex: 1;
     gap: 10px;
+    padding: 40px;
+    background: rgb(203, 188, 219);
 }
 
-.password-wrap label {
+/* .password-wrap label {
     display: block;
+} */
+
+.result-container {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(46, 46, 75);
 }
