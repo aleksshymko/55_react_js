@@ -29,3 +29,6 @@ export const ClientsCard = styled.div<ClientsCardStyledProps>`
   border-radius: 10px;
   box-shadow: 0 4px 10px;
 `;
+
+export const Client = styled.h2 ``
+export const Description = styled.p ``

@@ -1,4 +1,4 @@
-import { StyledHomework09, ClientsCard } from "./styles"
+import { StyledHomework09, ClientsCard, Client, Description } from "./styles"
 
 function Homework09 () {
     return (
@@ -8,8 +8,8 @@ function Homework09 () {
                 <p> Доступ к эксклюзивным функциям, персональный менеджер и приоритетная поддержка.</p>
             </ClientsCard>
             <ClientsCard>
-                <h2>Обычный Пользователь</h2>
-                <p>Стандартный доступ, базовые функции и поддержка в порядке очереди.</p>
+                <Client>Обычный Пользователь</Client>
+                <Description>Стандартный доступ, базовые функции и поддержка в порядке очереди.</Description>
             </ClientsCard>
         </StyledHomework09>
     )
