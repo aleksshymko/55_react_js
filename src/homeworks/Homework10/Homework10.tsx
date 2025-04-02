@@ -1,12 +1,12 @@
 import Button from "../../components/Button/Button";
-import { Homework10Wrapper } from "./styles";
+import { Homework10Container } from "./styles";
 
 function Homework10() {
   return (
-    <Homework10Wrapper>
+    <Homework10Container>
       <Button name="SEND" />
       <Button name="DELETE" danger />
-    </Homework10Wrapper>
+    </Homework10Container>
   );
 }
 
