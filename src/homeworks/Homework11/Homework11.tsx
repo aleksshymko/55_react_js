@@ -1,33 +1,34 @@
 import { useEffect, useState } from "react";
 import Input from "../../components/Input/Input";
-import { CountChanges, Homework11Wrapper, InputWrapper } from "./styles";
+import { Homework11Container, Result } from "./styles";
 
 function Homework11() {
-  const [inputValue, setInputValue] = useState<string>('');
-  const [inputValue1, setInputValue1] = useState<string>('');
-  const [changeCount, setChangeCount] = useState<number>(0);
+  const [note, setNote] = useState<string>('');
+  const [additNote, setAdditNote] = useState<string>('');
+  const [countNoteChange, setCountNoteChange] = useState<number>(0);
 
-  const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
-    //setChangeCount(changeCount + 1);
+  const onChangeNote = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setNote(event.target.value);
+    //setCountNoteChange(countNoteChange + 1);
   }
 
-  const changeValue1 = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue1(event.target.value);
+  const onAdditChangeNote = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setAdditNote(event.target.value);
   }
 
   useEffect(()=>{
-    setChangeCount(prevCount => prevCount + 1)
-  }, [inputValue])
+    //if(note)
+    setCountNoteChange(prevValue => prevValue + 1)
+  }, [note])
 
   return (
-    <Homework11Wrapper>
-      <InputWrapper>
-        <Input name="FirstInput" value={inputValue} onChange={changeValue} placeholder="Enter something"/>
-        <Input name="SecondInput" value={inputValue1}/>
-      </InputWrapper>
-      <CountChanges>Changes: {changeCount - 1}</CountChanges>
-    </Homework11Wrapper>
+    <Homework11Container>
+      {/* <InputContainer> */}
+        <Input name="note" value={note} onChange={onChangeNote} placeholder="Enter your note"/>
+        <Result>Changes: {countNoteChange - 1}</Result>
+        <Input name="note_addition" value={additNote} onChange={onAdditChangeNote} placeholder="Enter your additional note"/>
+      {/* </InputContainer> */}
+    </Homework11Container>
   );
 }
 
