@@ -6,7 +6,7 @@ import Input from "../../components/Input/Input";
 import Spinner from "../../components/Spinner/Spinner";
 
 function Lesson13() {
-  const [image, setImage] = useState<string | undefined>(undefined);
+  const [image, setImage] = useState<string[]>([]);
   const [errorMessage, setErrorMessage] = useState<string | undefined>(
     undefined
   );
@@ -20,7 +20,7 @@ function Lesson13() {
       const response = await axios.get(
         "https://dog.ceo/api/breeds/image/random"
       );
-      setImage(response.data.message);
+      setImage((prevImage)=>[...prevImage, response.data.message]);
     } catch (error: any) {
       setErrorMessage(error.message);
     } finally {
@@ -33,11 +33,9 @@ function Lesson13() {
     getImage();
   })
 
-  const addImages = (images:string[])=>{
-    images.push(setImage)
+  const deleteImages = ()=>{
+    setImage([])
   };
-
-  const deleteImages = ()=>{};
 
   useEffect(() => {
     getImage();
@@ -45,9 +43,9 @@ function Lesson13() {
 
   return (
     <Lesson13Wrapper>
-      <ImagesBlock>{isLoading ? <Spinner/> : <img src={image}/>}</ImagesBlock>
+      <ImagesBlock >{isLoading ? <Spinner/> : (image.map((image, index)=><img src={image} key={index}/>))} </ImagesBlock>
       <Button name="GET MORE IMAGES" onClick={getImage} disabled={isLoading}/>
-      <Button name="DELETE ALL DATA" onClick={deleteImages}/>
+      {image.length > 0  && <Button name="DELETE ALL DATA" onClick={deleteImages}/>}
       <Input name="search_image" value={inputValue} onChange={changeValue}/>
       <ErrorMessage>{errorMessage}</ErrorMessage>
     </Lesson13Wrapper>
