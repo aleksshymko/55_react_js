@@ -3,7 +3,9 @@
 // import Consultation05 from "./consultations/Consultation05/Consultation05";
 //import Homework11 from "./homeworks/Homework11/Homework11";
 // import Lesson12 from "./lessons/Lesson12/Lesson12";
-import Homework12 from "./homeworks/Homework12/Homework12";
+//import Homework12 from "./homeworks/Homework12/Homework12";
+//import Lesson14 from "./lessons/Lesson14/Lesson14";
+import Homework14 from "./homeworks/Homework14/Homework14";
 import GlobalStyles from "./styles/GlobalStyles";
 
 //import Button from "./components/Button/Button";
@@ -14,9 +16,9 @@ function App() {
     <>
       <GlobalStyles />
       {/* <Task06 /> */}
-      <Homework12 />
+      <Homework14 />
       {/* <Button/> */}
-      {/* <Lesson12 /> */}
+      {/* <Lesson14 /> */}
       {/* <Consultation05/> */}
     </>
   );
