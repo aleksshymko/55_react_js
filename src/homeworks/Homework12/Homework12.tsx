@@ -13,7 +13,7 @@ function Homework12() {
     setError(undefined);
     setIsLoading(true);
     try {
-      const response = await axios.get("https://catfact.ninja/fac");
+      const response = await axios.get("https://catfact.ninja/fact");
       setFacts(response.data.fact);
     } catch (error: any) {
       setError(error.message);
