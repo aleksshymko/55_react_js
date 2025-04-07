@@ -1,4 +1,5 @@
 import axios from "axios";
+import {v4} from "uuid";
 import { ChangeEvent, useEffect, useState } from "react";
 import Button from "../../components/Button/Button";
 import { Lesson13Wrapper, ImagesBlock, ErrorMessage } from "./styles";
@@ -43,7 +44,7 @@ function Lesson13() {
 
   return (
     <Lesson13Wrapper>
-      <ImagesBlock >{isLoading ? <Spinner/> : (image.map((image, index)=><img src={image} key={index}/>))} </ImagesBlock>
+      <ImagesBlock >{isLoading ? <Spinner/> : (image.map((image)=><img src={image} key={v4()}/>))} </ImagesBlock>
       <Button name="GET MORE IMAGES" onClick={getImage} disabled={isLoading}/>
       {image.length > 0  && <Button name="DELETE ALL DATA" onClick={deleteImages}/>}
       <Input name="search_image" value={inputValue} onChange={changeValue}/>
