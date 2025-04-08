@@ -1,14 +1,15 @@
 import { useFormik } from "formik";
 import * as yup from "yup";
+
 import Button from "../../components/Button/Button";
 import Checkbox from "../../components/Checkbox/Checkbox";
 import Input from "../../components/Input/Input";
-import { Homework15Container, Title, ValidationFormContainer } from "./styles";
-import { Homework15Values } from "./types";
+import { Homework15Container, Title, ValidationForm } from "./styles";
+import { ValidationFormValues } from "./types";
 
 function Homework15() {
-  const schema = yup.object().shape({
-    validation_code: yup
+  const validationSchema = yup.object().shape({
+    code: yup
       .number()
       .typeError("Код должен быть числом")
       .positive("Только позитивные значения")
@@ -17,49 +18,53 @@ function Homework15() {
       .min(100000, "Код должен быть из 6 цифр")
       .max(999999, "Код должен быть из 6 цифр"),
     // .test(
-    //   "length",
+    //   "6symbol",
     //   "Код должен быть из 6 цифр",
     //   (value) => String(value).length === 6
     // ),
-    privacy_and_policy: yup
+    privacy: yup
       .boolean()
       .oneOf([true], "Необходимо согласие для продолжения"),
   });
 
   const formik = useFormik({
     initialValues: {
-      validation_code: "",
-      privacy_and_policy: false,
-    } as Homework15Values,
-    validationSchema: schema,
-    onSubmit(values, { resetForm }) {
+      code: "",
+      privacy: false,
+    } as ValidationFormValues,
+    validationSchema,
+    validateOnChange: false,
+    onSubmit(values: ValidationFormValues, formikHelpers) {
       console.table(values);
       console.log("Вы успешно вошли");
-      resetForm();
+      formikHelpers.resetForm();
     },
   });
 
   return (
     <Homework15Container>
-    <ValidationFormContainer onSubmit={formik.handleSubmit}>
+    <ValidationForm onSubmit={formik.handleSubmit}>
       <Title>Validation Form</Title>
       <Input
-        name="validation_code"
-        label="Validation code"
+        name="code"
+        label="Validation Code"
+        id="code_id"
+        type="number"
         placeholder="Enter your code"
-        value={formik.values.validation_code}
+        value={formik.values.code}
         onChange={formik.handleChange}
-        error={formik.errors.validation_code}
+        error={formik.errors.code}
       />
       <Checkbox
-        name="privacy_and_policy"
+        name="privacy"
         label="Privacy and policy"
-        checked={formik.values.privacy_and_policy}
+        id="privacy_id"
+        checked={formik.values.privacy}
         onChange={formik.handleChange}
-        error={formik.errors.privacy_and_policy}
+        error={formik.errors.privacy}
       />
       <Button name="Login" />
-    </ValidationFormContainer>
+    </ValidationForm>
     </Homework15Container>
   );
 }

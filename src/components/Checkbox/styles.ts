@@ -1,22 +1,23 @@
 import styled from "@emotion/styled";
 
-export const CheckboxContainer = styled.div`
+export const CheckboxComponent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
 `;
 
-export const InputWrapper = styled.div`
+export const CheckboxContainer = styled.div`
   display: flex;
   align-items: center;
+  gap: 10px;
 `;
 
-export const InputComponent = styled.input`
+export const CheckboxElement = styled.input`
   width: 25px;
   height: 25px;
 `;
 
-export const Label = styled.label`
+export const CheckboxLabel = styled.label`
   font-size: 20px;
 `;
 
