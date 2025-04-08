@@ -35,7 +35,7 @@ function Homework15() {
     onSubmit(values, { resetForm }) {
       console.table(values);
       console.log("Вы успешно вошли");
-      resetForm;
+      resetForm();
     },
   });
 

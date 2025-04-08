@@ -12,7 +12,7 @@ function Checkbox({
   name,
   label,
   error,
-  type = "checkbox",
+  //type = "checkbox"
   checked,
   onChange,
 }: CheckboxProps) {
@@ -22,7 +22,7 @@ function Checkbox({
         <InputComponent
           id={id}
           name={name}
-          type={type}
+          type='checkbox'
           checked={checked}
           onChange={onChange}
         />
