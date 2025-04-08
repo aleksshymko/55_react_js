@@ -1,6 +1,6 @@
 // import Consultation05 from "./consultations/Consultation05/Consultation05";
 //import Lesson14 from "./lessons/Lesson14/Lesson14";
-import Homework14 from "./homeworks/Homework14/Homework14";
+import Homework15 from "./homeworks/Homework15/Homework15";
 import GlobalStyles from "./styles/GlobalStyles";
 
 //import Button from "./components/Button/Button";
@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <Homework14 />
+      <Homework15 />
       {/* <Lesson14 /> */}
       {/* <Consultation05/> */}
     </>
