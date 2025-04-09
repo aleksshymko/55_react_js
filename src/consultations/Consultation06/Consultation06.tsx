@@ -15,37 +15,39 @@ function Consultation06() {
   const [userData, setUserData] = useState<any>(undefined);
   console.log(userData);
   const [isTimerOn, setIsTimerOn] = useState<boolean>(false);
+  const [intervalID, setIsIntervalID] = useState<any>(undefined);
 
   const getUser = async() => {
-    // if (isTimerOn) {
-    //   setIsTimerOn(false)
-    // } else {
-    //   setIsTimerOn(true)
-    // }
-    setIsTimerOn((prevValue) => !prevValue);
+    if (isTimerOn) {
+      clearInterval(intervalID);
+      setIsTimerOn(false);
+      setIsIntervalID(undefined);
+      return;
+    } else {
+      setIsTimerOn(true)
+    }
+    //setIsTimerOn((prevValue) => !prevValue);
 
-     let intervalID = setInterval(async () => {
-       if (isTimerOn) {
-         clearInterval(intervalID);
-       } else {
+     let id = setInterval(async () => {
         try {
           const response = await axios.get(USER_URL);
           setUserData(response.data.results[0]);
         } catch (error: any) {
         } finally {
          }
-       }
-     }, 3000);
+     }, 2000);
+     setIsIntervalID(id);
   };
 
-  useEffect(() => {
-    getUser();
-  }, []);
+  // useEffect(() => {
+  //   getUser();
+  // }, []);
 
   return (
     <Consultation06Container>
+      <UserCard>
       {userData && (
-        <UserCard>
+        <>
           <Avatar src={userData?.picture?.large} alt="user avatar" />
           <UserName>
             Name:
@@ -53,13 +55,14 @@ function Consultation06() {
           </UserName>
           <UserInfo>Phone:{userData.phone}</UserInfo>
           <UserInfo>Email:{userData.email}</UserInfo>
+          </>
+      )}
           <Button
             name={isTimerOn ? "CANCEL RANDOM USER" : "GET RANDOM USER"}
             onClick={getUser}
             danger={isTimerOn}
           />
         </UserCard>
-      )}
     </Consultation06Container>
   );
 }
