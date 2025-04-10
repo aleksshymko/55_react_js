@@ -12,6 +12,10 @@ import Users from "./pages/Users/Users";
 import Designer from './pages/Users/components/Designer/Designer'
 import Manager from './pages/Users/components/Manager/Manager'
 import PageNotFound from './pages/PageNotFound/PageNotFound'
+import Clients from "./pages/Clients/Clients";
+import Twitter from './pages/Clients/components/Twitter/Twitter'
+import Facebook from './pages/Clients/components/Facebook/Facebook'
+import Youtube from './pages/Clients/components/Youtube/Youtube'
 
 function App() {
   return (
@@ -25,6 +29,10 @@ function App() {
           <Route path='/users' element={<Users />} />
           <Route path='/users/designer' element={<Designer />} />
           <Route path='/users/manager' element={<Manager />} />
+          <Route path='/clients' element={<Clients />} />
+          <Route path='/clients/facebook' element={<Facebook />} />
+          <Route path='/clients/twitter' element={<Twitter />} />
+          <Route path='/clients/youtube' element={<Youtube />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       </Layout>
