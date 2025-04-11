@@ -16,6 +16,7 @@ import Clients from "./pages/Clients/Clients";
 import Twitter from './pages/Clients/components/Twitter/Twitter'
 import Facebook from './pages/Clients/components/Facebook/Facebook'
 import Youtube from './pages/Clients/components/Youtube/Youtube'
+import Lesson18 from "./lessons/Lesson18/Lesson18";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path='/clients/facebook' element={<Facebook />} />
           <Route path='/clients/twitter' element={<Twitter />} />
           <Route path='/clients/youtube' element={<Youtube />} />
+          <Route path="/lesson18" element={<Lesson18/>}/>
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       </Layout>

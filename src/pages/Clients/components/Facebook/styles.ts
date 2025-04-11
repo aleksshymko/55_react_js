@@ -10,9 +10,8 @@ export const FacebookWrapper = styled.div`
   background-color: white;
 `;
 
-export const Company = styled.div`
+export const Company = styled.h2`
   font-size: 40px;
-  font-weight: bold;
   color: blue;
 `;
 export const Info = styled.p`

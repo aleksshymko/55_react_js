@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const ClientsWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  //align-items: center;
   gap: 16px;
   flex: 1;
   padding: 60px;
